@@ -1,0 +1,56 @@
+[package]
+name = "demo_abenity_api_with_rust_reqwest"
+version = "1.0.0"
+authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
+edition = "2018"
+
+[dependencies]
+
+# Futures for async
+futures = "*"
+
+# A fast and correct HTTP library.
+hyper = "*"
+
+# Hyper native-tls support.
+hyper-native-tls = "*"
+
+# Default TLS implementation for use with hyper.
+hyper-tls = "*"
+
+# Reqeust: higher level HTTP client library.
+#
+# Features:
+#
+#   * default-tls (enabled by default): Provides TLS support to connect over HTTPS.
+#   * native-tls: Enables TLS functionality provided by native-tls.
+#   * native-tls-vendored: Enables the vendored feature of native-tls.
+#   * rustls-tls: Enables TLS functionality provided by rustls.
+#   * blocking: Provides the blocking client API.
+#   * cookies: Provides cookie session support.
+#   * gzip: Provides response body gzip decompression.
+#   * brotli: Provides response body brotli decompression.
+#   * json: Provides serialization and deserialization for JSON bodies.
+#   * stream: Adds support for futures::Stream.
+#   * socks: Provides SOCKS5 proxy support.
+#   * trust-dns: Enables a trust-dns async resolver instead of default threadpool using getaddrinfo.
+#
+reqwest = { version = "*", features = ["blocking", "cookies", "default-tls", "json", "stream"] }
+
+# Serde: a framework for serializing and deserializing Rust data structures.
+# The Serde crate has core APIs, including Serialize and Deserialize traits.
+# Always required for Serde. The "derive" feature is only required when
+# using #[derive(Serialize, Deserialize)] to make Serde work with structs
+# and enums defined in your crate.
+serde = { version = "*", features = ["derive"] }
+
+# Macros 1.1 implementation of #[derive(Serialize, Deserialize)].
+# Version must match the serde dependency version.
+serde_derive = "*"
+
+# Serde JSON serialization file format.
+serde_json = { version = "*", features = ["arbitrary_precision"] }
+
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
+tokio = { version = "*", features = ["full"] }
+tokio-test = "*"
