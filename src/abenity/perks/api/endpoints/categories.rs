@@ -5,22 +5,22 @@ pub fn get_categories_url(base: Url) -> Url {
 }
 
 pub async fn get_categories(
-    config: crate::abenity::api::config::Config,
+    config: crate::abenity::perks::api::config::Config,
     client: reqwest::Client, 
     base: Url
-) -> Vec<crate::abenity::api::entities::category::Category> {
+) -> Vec<crate::abenity::perks::api::entities::category::Category> {
     let url = get_categories_url(base);
     client
     .get(url)
     .basic_auth(config.username, Some(config.password))
     .send().await.expect("send")
-    .json::<Vec<crate::abenity::api::entities::category::Category>>().await.expect("json")
+    .json::<Vec<crate::abenity::perks::api::entities::category::Category>>().await.expect("json")
 }
 
 #[cfg(test)]
 mod tests {
 
-    use crate::abenity::api::endpoints::categories::*;
+    use crate::abenity::perks::api::endpoints::categories::*;
     use reqwest::Url;
 
     #[test]

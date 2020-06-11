@@ -1,13 +1,13 @@
 #[derive(Deserialize, Debug)]
 pub struct VendorOffers {
-    vendor: Option<crate::abenity::api::entities::vendor::Vendor>,
-    offers: Option<Vec<crate::abenity::api::entities::offer::Offer>>,
+    vendor: Option<crate::abenity::perks::api::entities::vendor::Vendor>,
+    offers: Option<Vec<crate::abenity::perks::api::entities::offer::Offer>>,
 }
 
 #[cfg(test)]
 mod tests {
 
-    use crate::abenity::api::entities::vendor_offers::VendorOffers;
+    use crate::abenity::perks::api::entities::vendor_offers::VendorOffers;
 
     #[test]
     fn test_parse_json_str_to_value() {

@@ -18,7 +18,7 @@ pub struct Location {
 #[cfg(test)]
 mod tests {
 
-    use crate::abenity::api::entities::location::Location;
+    use crate::abenity::perks::api::entities::location::Location;
     
     #[test]
     fn test_parse_json_str_to_value() {

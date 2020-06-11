@@ -5,23 +5,23 @@ pub fn get_offers_url(base: Url, category_id: &str) -> Url {
 }
 
 pub async fn get_offers(
-    config: crate::abenity::api::config::Config,
+    config: crate::abenity::perks::api::config::Config,
     client: reqwest::Client, 
     base: Url, 
     category_id: &str
-) -> Vec<crate::abenity::api::entities::vendor_offers::VendorOffers> {
-    let url = get_offers_url(base, category_id);
+) -> Vec<crate::abenity::perks::api::entities::vendor_offers::VendorOffers> {
+    let url = get_offers_url(config.base, category_id);
     client
     .get(url)
     .basic_auth(config.username, Some(config.password))
     .send().await.expect("send")
-    .json::<Vec<crate::abenity::api::entities::vendor_offers::VendorOffers>>().await.expect("json")
+    .json::<Vec<crate::abenity::perks::api::entities::vendor_offers::VendorOffers>>().await.expect("json")
 }
 
 #[cfg(test)]
 mod tests {
 
-    use crate::abenity::api::endpoints::offers::*;
+    use crate::abenity::perks::api::endpoints::offers::*;
     use reqwest::Url;
 
     #[test]

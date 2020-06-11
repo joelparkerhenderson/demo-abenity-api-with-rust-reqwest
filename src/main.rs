@@ -17,8 +17,8 @@ pub mod abenity;
 
 async fn async_main() {
     let client = reqwest::Client::new();
-    let config = crate::abenity::api::config::Config::from_env();
-    // let categories: Vec<crate::abenity::api::entities::category::Category> = abenity::api::endpoints::categories::get_categories(client, base).await;
+    let config = crate::abenity::perks::api::config::Config::from_env();
+    // let categories: Vec<crate::abenity::perks::api::entities::category::Category> = abenity::perks::api::endpoints::categories::get_categories(client, base).await;
     // println!("{:#?}", categories);
 }
 //#[tokio::main]

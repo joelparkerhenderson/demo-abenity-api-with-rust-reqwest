@@ -1,5 +1,5 @@
 [package]
-name = "demo_abenity_api_with_rust_reqwest"
+name = "demo_abenity_perks_api_with_rust_reqwest"
 version = "1.0.0"
 authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
 edition = "2018"

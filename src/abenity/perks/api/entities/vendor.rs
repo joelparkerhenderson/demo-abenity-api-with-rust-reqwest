@@ -2,16 +2,16 @@
 pub struct Vendor {
     id: Option<String>,
     name: Option<String>,
-    logo: Option<crate::abenity::api::entities::logo::Logo>,
+    logo: Option<crate::abenity::perks::api::entities::logo::Logo>,
 }
 
 #[cfg(test)]
 mod tests {
 
-    use crate::abenity::api::entities::vendor::Vendor;
+    use crate::abenity::perks::api::entities::vendor::Vendor;
 
     #[test]
-    fn test_abentity_api_vendor_x_parse_json_str_to_value() {
+    fn test_abenity_api_vendor_x_parse_json_str_to_value() {
         let json_str = r#"
             {
                 "name": "Windshield Replacers",

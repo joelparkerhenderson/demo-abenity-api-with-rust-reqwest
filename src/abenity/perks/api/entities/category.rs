@@ -4,13 +4,13 @@ pub struct Category {
     key: Option<String>,
     title: Option<String>,
     offer_count: Option<u16>,
-    children: Option<Vec<crate::abenity::api::entities::category::Category>>,
+    children: Option<Vec<crate::abenity::perks::api::entities::category::Category>>,
 }
 
 #[cfg(test)]
 mod tests {
 
-    use crate::abenity::api::entities::category::Category;
+    use crate::abenity::perks::api::entities::category::Category;
 
     #[test]
     fn test_parse_json_str_to_value() {
